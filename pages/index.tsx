@@ -1,13 +1,30 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import { IData } from "interfaces";
+import { useEffect, useState } from "react";
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">About</Link>
-    </p>
-  </Layout>
-)
+const IndexPage = () => {
+  const [data, setData] = useState<IData>([]);
 
-export default IndexPage
+  useEffect(() => {
+    const timer = setInterval(() => {
+      fetch("/api/data")
+        .then((res) => {
+          console.log("res", res);
+          return res.json();
+        })
+        .then((jsonRes) => {
+          console.log("jsonRes", jsonRes);
+          if (Array.isArray(jsonRes.data)) {
+            setData(jsonRes.data);
+          }
+        });
+    }, 1000);
+
+    return () => {
+      clearInterval(timer);
+    };
+  }, []);
+
+  return <div>{JSON.stringify(data, null, 2)}</div>;
+};
+
+export default IndexPage;
