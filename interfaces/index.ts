@@ -4,10 +4,14 @@
 //
 // import { User } from 'path/to/interfaces';
 
+import React from "react";
+
 export type User = {
   id: number;
   name: string;
 };
 
-export type IDataItem = Record<string, number | string>;
-export type IData = IDataItem[];
+export type IData = Record<string, number | string>;
+export type IDataList = IData[];
+
+export type IDataWidget = React.FC<{ data: IDataList }>;

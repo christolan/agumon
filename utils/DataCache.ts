@@ -21,4 +21,5 @@ class DataCache {
   };
 }
 
+export const idKey = "id";
 export default new DataCache();
