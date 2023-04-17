@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 class DataCache {
   private data = [];
 
@@ -18,6 +20,14 @@ class DataCache {
       ...item,
       [idKey]: this.generateId(),
     });
+  };
+
+  public delete = (ids?: string[]) => {
+    if (ids?.length) {
+      _.remove(this.data, (item) => _.includes(ids, item.id));
+    } else {
+      this.data = [];
+    }
   };
 }
 

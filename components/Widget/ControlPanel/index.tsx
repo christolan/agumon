@@ -1,4 +1,4 @@
-import { Switch } from 'antd';
+import { Button, Popconfirm, Switch } from 'antd';
 import { IDataWidget } from 'interfaces';
 import { useEffect, useState } from 'react';
 import DataFetch from 'utils/DataFetch';
@@ -12,7 +12,7 @@ export const ControlPanel: IDataWidget = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
       <div className={styles.switch}>
         <span className={styles['switch-text']}>轮询开关</span>
         <Switch
@@ -26,6 +26,19 @@ export const ControlPanel: IDataWidget = () => {
           }}
         />
       </div>
+
+      <Popconfirm
+        title="确认清空数据吗？"
+        onConfirm={() => {
+          fetch('/api/data', { method: 'DELETE' }).catch((e) => {
+            console.error('error when DELETE /api/data', e);
+          });
+        }}
+      >
+        <Button type="primary" danger={true}>
+          清空数据
+        </Button>
+      </Popconfirm>
     </div>
   );
 };

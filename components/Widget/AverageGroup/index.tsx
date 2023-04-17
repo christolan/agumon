@@ -11,11 +11,7 @@ export const AverageGroup: IDataWidget = ({ data }) => {
     <div>
       <div style={{ marginBottom: '8px' }}>
         <span>分组字段</span>
-        <div
-          style={{
-            display: 'flex',
-          }}
-        >
+        <div style={{ display: 'flex' }}>
           <Input
             value={groupKey}
             onChange={(e) => {
