@@ -4,7 +4,7 @@ class DataCache {
   private id = 0;
   private generateId = () => {
     const id = this.id;
-    console.log("id", id);
+    console.log('id', id);
     this.id++;
     return id;
   };
@@ -16,10 +16,10 @@ class DataCache {
   public put = (item) => {
     this.data.push({
       ...item,
-      id: this.generateId(),
+      [idKey]: this.generateId(),
     });
   };
 }
 
-export const idKey = "id";
+export const idKey = 'id';
 export default new DataCache();

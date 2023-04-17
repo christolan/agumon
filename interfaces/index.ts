@@ -4,7 +4,8 @@
 //
 // import { User } from 'path/to/interfaces';
 
-import React from "react";
+import { CardProps } from 'antd';
+import React from 'react';
 
 export type User = {
   id: number;
@@ -14,7 +15,9 @@ export type User = {
 export type IData = Record<string, number | string>;
 export type IDataList = IData[];
 
-export type IDataWidget = React.FC<{ data: IDataList }>;
+export type IDataWidget = React.FC<{ data: IDataList }> & {
+  cardProps: CardProps;
+};
 
 export interface IGetDataResponse {
   message: string;

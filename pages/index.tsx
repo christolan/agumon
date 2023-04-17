@@ -2,13 +2,17 @@ import Editor from '@monaco-editor/react';
 import { Card, List } from 'antd';
 import { Layout } from 'components/Layout';
 import { Average } from 'components/Widget/Average';
+import { AverageGroup } from 'components/Widget/AverageGroup';
 import { Controller } from 'components/Widget/Controller';
 import { Total } from 'components/Widget/Total';
 import { IDataList, IDataWidget } from 'interfaces';
 import { useEffect, useState } from 'react';
 import DataFetch from 'utils/DataFetch';
 
-const widgets: IDataWidget[] = [Controller, Total, Average];
+/**
+ * 数据展示组件注册
+ */
+const widgets: IDataWidget[] = [Controller, Total, Average, AverageGroup];
 
 const IndexPage = () => {
   const [data, setData] = useState<IDataList>([]);
@@ -36,11 +40,10 @@ const IndexPage = () => {
       }
       right={
         <List
-          bordered={true}
           style={{ padding: '10px 10px 0 10px', margin: '10px' }}
           dataSource={widgets}
           renderItem={(Widget) => (
-            <Card style={{ marginBottom: '10px' }}>
+            <Card {...Widget.cardProps} style={{ marginBottom: '10px' }}>
               <Widget data={data} />
             </Card>
           )}

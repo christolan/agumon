@@ -29,3 +29,7 @@ export const Controller: IDataWidget = () => {
     </div>
   );
 };
+
+Controller.cardProps = {
+  title: '轮询控制器',
+};

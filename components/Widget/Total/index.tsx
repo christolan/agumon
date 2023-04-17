@@ -1,5 +1,9 @@
-import { IDataWidget } from "interfaces";
+import { IDataWidget } from 'interfaces';
 
 export const Total: IDataWidget = ({ data }) => {
-  return <div>total: {data.length}</div>;
+  return <div>{data.length}</div>;
+};
+
+Total.cardProps = {
+  title: '数据长度',
 };
