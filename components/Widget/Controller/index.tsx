@@ -31,5 +31,5 @@ export const Controller: IDataWidget = () => {
 };
 
 Controller.cardProps = {
-  title: '轮询控制器',
+  title: '控制面板',
 };
