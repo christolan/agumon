@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import DataFetch from 'utils/DataFetch';
 import styles from './index.module.css';
 
-export const Controller: IDataWidget = () => {
+export const ControlPanel: IDataWidget = () => {
   const [value, setValue] = useState(DataFetch.status);
 
   useEffect(() => {
@@ -30,6 +30,6 @@ export const Controller: IDataWidget = () => {
   );
 };
 
-Controller.cardProps = {
+ControlPanel.cardProps = {
   title: '控制面板',
 };

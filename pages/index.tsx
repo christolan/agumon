@@ -3,7 +3,7 @@ import { Card, List } from 'antd';
 import { Layout } from 'components/Layout';
 import { Average } from 'components/Widget/Average';
 import { AverageGroup } from 'components/Widget/AverageGroup';
-import { Controller } from 'components/Widget/Controller';
+import { ControlPanel } from 'components/Widget/ControlPanel';
 import { Total } from 'components/Widget/Total';
 import { IDataList, IDataWidget } from 'interfaces';
 import { useEffect, useState } from 'react';
@@ -12,7 +12,7 @@ import DataFetch from 'utils/DataFetch';
 /**
  * 数据展示组件注册
  */
-const widgets: IDataWidget[] = [Controller, Total, Average, AverageGroup];
+const widgets: IDataWidget[] = [ControlPanel, Total, Average, AverageGroup];
 
 const IndexPage = () => {
   const [data, setData] = useState<IDataList>([]);
