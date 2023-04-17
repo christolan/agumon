@@ -1,15 +1,14 @@
-import { IDataList, IDataWidget } from "interfaces";
-import { useEffect, useState } from "react";
-import Editor from "@monaco-editor/react";
-import { Layout } from "components/Layout";
-import { Average } from "components/Widget/Average";
-import _ from "lodash";
-import { Card, List } from "antd";
-import { Total } from "components/Widget/Total";
-import DataFetch from "utils/DataFetch";
-import { DataFetchController } from "components/Widget/DataFetchController";
+import Editor from '@monaco-editor/react';
+import { Card, List } from 'antd';
+import { Layout } from 'components/Layout';
+import { Average } from 'components/Widget/Average';
+import { Controller } from 'components/Widget/Controller';
+import { Total } from 'components/Widget/Total';
+import { IDataList, IDataWidget } from 'interfaces';
+import { useEffect, useState } from 'react';
+import DataFetch from 'utils/DataFetch';
 
-const widgets: IDataWidget[] = [DataFetchController, Total, Average];
+const widgets: IDataWidget[] = [Controller, Total, Average];
 
 const IndexPage = () => {
   const [data, setData] = useState<IDataList>([]);
@@ -38,10 +37,10 @@ const IndexPage = () => {
       right={
         <List
           bordered={true}
-          style={{ padding: "10px 10px 0 10px", margin: "10px" }}
+          style={{ padding: '10px 10px 0 10px', margin: '10px' }}
           dataSource={widgets}
           renderItem={(Widget) => (
-            <Card style={{ marginBottom: "10px" }}>
+            <Card style={{ marginBottom: '10px' }}>
               <Widget data={data} />
             </Card>
           )}

@@ -1,6 +1,6 @@
-import { IData, IDataList } from "interfaces";
-import _ from "lodash";
-import { idKey } from "utils/DataCache";
+import { IData, IDataList } from 'interfaces';
+import _ from 'lodash';
+import { idKey } from 'utils/DataCache';
 
 export const getAverage = (data: IDataList): IData => {
   const total: IData = {};

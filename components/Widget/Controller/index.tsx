@@ -1,10 +1,10 @@
-import { Switch } from "antd";
-import { IDataWidget } from "interfaces";
-import { useEffect, useState } from "react";
-import DataFetch from "utils/DataFetch";
-import styles from "./index.module.css";
+import { Switch } from 'antd';
+import { IDataWidget } from 'interfaces';
+import { useEffect, useState } from 'react';
+import DataFetch from 'utils/DataFetch';
+import styles from './index.module.css';
 
-export const DataFetchController: IDataWidget = () => {
+export const Controller: IDataWidget = () => {
   const [value, setValue] = useState(DataFetch.status);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const DataFetchController: IDataWidget = () => {
   return (
     <div>
       <div className={styles.switch}>
-        <span className={styles["switch-text"]}>轮询开关</span>
+        <span className={styles['switch-text']}>轮询开关</span>
         <Switch
           checked={value}
           onChange={(checked) => {
