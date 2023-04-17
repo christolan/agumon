@@ -6,27 +6,23 @@ import { Average } from "components/Widget/Average";
 import _ from "lodash";
 import { Card, List } from "antd";
 import { Total } from "components/Widget/Total";
+import DataFetch from "utils/DataFetch";
+import { DataFetchController } from "components/Widget/DataFetchController";
 
-const widgets: IDataWidget[] = [Total, Average];
+const widgets: IDataWidget[] = [DataFetchController, Total, Average];
 
 const IndexPage = () => {
   const [data, setData] = useState<IDataList>([]);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      fetch("/api/data")
-        .then((res) => {
-          return res.json();
-        })
-        .then((jsonRes) => {
-          if (Array.isArray(jsonRes.data)) {
-            setData(jsonRes.data);
-          }
-        });
-    }, 1000);
-
+    DataFetch.on((res) => {
+      if (Array.isArray(res.data)) {
+        setData(res.data);
+      }
+    });
+    DataFetch.start();
     return () => {
-      clearInterval(timer);
+      DataFetch.stop();
     };
   }, []);
 
