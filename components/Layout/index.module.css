@@ -17,5 +17,5 @@
   width: 50%;
   flex-shrink: 0;
   overflow: auto;
-  background-color: rgb(240, 242, 245);
+  background-color: rgb(240 242 245);
 }
