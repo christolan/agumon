@@ -7,7 +7,8 @@
     "type-check": "tsc",
     "lint": "eslint **/*.{js,jsx,ts,tsx}",
     "lint:style": "stylelint **/*.css",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "check-spell": "cspell **"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.5.0",
@@ -24,6 +25,7 @@
     "@types/react-dom": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
+    "cspell": "^6.31.1",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
     "husky": "^8.0.3",
@@ -41,6 +43,9 @@
     "*.css": [
       "prettier --write",
       "stylelint --fix"
+    ],
+    "*": [
+      "cspell"
     ]
   }
 }
