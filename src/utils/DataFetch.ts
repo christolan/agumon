@@ -2,7 +2,7 @@ import {
   IDataFetchListener,
   IDataFetchStatusListener,
   IGetDataResponse,
-} from "interfaces";
+} from 'interfaces';
 
 class DataFetch {
   private timer: NodeJS.Timeout;
@@ -38,7 +38,7 @@ class DataFetch {
     }
     clearInterval(this.timer);
     this.timer = setInterval(() => {
-      fetch("/api/data")
+      fetch('/api/data')
         .then((res) => {
           return res.json() as Promise<IGetDataResponse>;
         })

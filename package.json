@@ -8,7 +8,8 @@
     "lint": "eslint **/*.{js,jsx,ts,tsx}",
     "lint:style": "stylelint **/*.css",
     "format": "prettier --write .",
-    "check-spell": "cspell **"
+    "check-spell": "cspell **",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@monaco-editor/react": "^4.5.0",
