@@ -1,4 +1,5 @@
 {
+  "name": "agumon",
   "private": true,
   "scripts": {
     "dev": "next",
@@ -38,14 +39,13 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "prettier --write",
       "eslint --fix"
     ],
     "*.css": [
-      "prettier --write",
       "stylelint --fix"
     ],
     "*": [
+      "prettier --write",
       "cspell"
     ]
   }
