@@ -1,4 +1,3 @@
-import { IData, IDataList } from 'interfaces';
 import _ from 'lodash';
 import { getAverage } from '../Average/util';
 

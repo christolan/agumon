@@ -6,7 +6,7 @@ import { AverageGroup } from 'components/Widget/AverageGroup';
 import { ControlPanel } from 'components/Widget/ControlPanel';
 import { PreloadRadio } from 'components/Widget/PreloadRadio';
 import { Total } from 'components/Widget/Total';
-import { IDataList, IDataWidget } from 'interfaces';
+import { IDataWidget } from 'interfaces';
 import { useEffect, useState } from 'react';
 import DataFetch from 'utils/DataFetch';
 

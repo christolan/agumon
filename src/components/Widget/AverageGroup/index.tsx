@@ -1,5 +1,5 @@
 import { Button, Input } from 'antd';
-import { IData, IDataWidget } from 'interfaces';
+import { IDataWidget } from 'interfaces';
 import { useState } from 'react';
 import { getAverageGroup } from './util';
 
@@ -31,10 +31,7 @@ export const AverageGroup: IDataWidget = ({ data }) => {
       </div>
       <div>
         <div>计算结果</div>
-        <Input.TextArea
-          value={JSON.stringify(value, null, 4)}
-          autoSize={true}
-        />
+        <Input.TextArea value={JSON.stringify(value, null, 4)} autoSize={true} />
       </div>
     </div>
   );

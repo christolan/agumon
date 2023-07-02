@@ -12,9 +12,6 @@ export type User = {
   name: string;
 };
 
-export type IData = Record<string, number | string>;
-export type IDataList = IData[];
-
 export type IDataWidget = React.FC<{ data: IDataList }> & {
   cardProps: CardProps;
 };
